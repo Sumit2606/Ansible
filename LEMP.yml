@@ -1,0 +1,29 @@
+- name: myplay1
+  hosts: localhost
+  become: true
+  connection: local
+  tasks:
+    - name: install nginx
+      apt:
+        name: nginx
+        state: present
+    - name: start nginx service
+      service:
+        name: nginx
+        state: started
+    - name: install mysql
+      apt:
+        name: mysql-server
+        state: present
+    - name: start mysql service
+      service:
+        name: mysql
+        state: started
+    - name: install php
+      apt:
+        name: php-fpm
+        state: present
+    - name: start php-fpm service
+      service:
+        name: php8.3-fpm
+        state: started

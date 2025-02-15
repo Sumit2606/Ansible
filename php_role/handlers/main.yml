@@ -1,0 +1,9 @@
+- name: restart nginx service
+  service:
+      name: nginx
+      state: restarted 
+- name: restart php-fpm service
+  service:
+      name: php8.3-fpm
+      state: restarted
+# handlers file for php_role
